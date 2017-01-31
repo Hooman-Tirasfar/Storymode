@@ -7,8 +7,45 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <header id="page-header" style="position: relative;">
+        <nav>
+            <div class="left">
+              <%= link_to image_tag("logo.png", :alt => "Logo", :class => "brand"), root_path %>
+
+            </div>
+            <!--end left-->
+            <div class="right">
+                <div class="primary-nav has-mega-menu">
+                    
+                    <!--end navigation-->
+                </div>
+                <!--end primary-nav-->
+                  <div class="secondary-nav">
+                    <% if user_signed_in? %>
+                      <%= link_to('خروج', destroy_user_session_path, :method => :delete) %>        
+                    <% else %>
+                      <%= link_to "ثبت نام", new_user_registration_path %>
+                      <%= link_to "ورود", new_user_session_path %>
+                    <% end %>
+
+                </div>
+                <!--end secondary-nav-->
+                <a href="#" class="btn btn-primary btn-small btn-rounded icon shadow add-listing" data-modal-external-file="modal_submit.php" data-target="modal-submit"><i class="fa fa-plus"></i><span>ارسال موقعیت جدید</span></a>
+                <div class="nav-btn">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </div>
+                <!--end nav-btn-->
+            </div>
+            <!--end right-->
+        </nav>
+        <!--end nav-->
+    </header>
 
   <body>
+  	<p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>
