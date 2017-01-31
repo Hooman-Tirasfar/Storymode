@@ -19,6 +19,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1/edit
   def edit
+        authorize! :manage, @category
   end
 
   # POST /categories
@@ -40,6 +41,7 @@ class CategoriesController < ApplicationController
   # PATCH/PUT /categories/1
   # PATCH/PUT /categories/1.json
   def update
+            authorize! :manage, @category
     respond_to do |format|
       if @category.update(category_params)
         format.html { redirect_to @category, notice: 'Category was successfully updated.' }

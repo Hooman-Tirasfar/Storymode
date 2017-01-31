@@ -21,6 +21,7 @@ class LocationsController < ApplicationController
 
   # GET /locations/1/edit
   def edit
+    authorize! :update, @location
   end
 
   # POST /locations
@@ -43,6 +44,7 @@ class LocationsController < ApplicationController
   # PATCH/PUT /locations/1
   # PATCH/PUT /locations/1.json
   def update
+        authorize! :update, @location
     respond_to do |format|
       if @location.update(location_params)
         format.html { redirect_to @location, notice: 'Location was successfully updated.' }
@@ -72,6 +74,6 @@ class LocationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def location_params
-      params.require(:location).permit(:title, :description, :details, :address, :tel, :verified)
+      params.require(:location).permit(:title, :description, :details, :address, :tel, :verified, :image)
     end
 end

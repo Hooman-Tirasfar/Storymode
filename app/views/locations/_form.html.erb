@@ -2,7 +2,7 @@
   <% if location.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(location.errors.count, "error") %> prohibited this location from being saved:</h2>
-
+      
       <ul>
       <% location.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -35,16 +35,21 @@
     <%= f.label :tel %>
     <%= f.number_field :tel %>
   </div>
+        <% if can? :manage, @location %>
+                  <div class="field">
+                    <%= f.label :verified %>
+                    <%= f.check_box :verified %>
+                  </div>
+        <% end %>
 
   <div class="field">
-    <%= f.label :verified %>
-    <%= f.check_box :verified %>
+    <%= f.file_field :image %>
   </div>
 
   <div class="field">
   <%= f.label :category_id %><br>
   <%= f.collection_select(:category_id, Category.all, :id, :name) %>
-  </div>
+</div>
 
   <div class="actions">
     <%= f.submit %>

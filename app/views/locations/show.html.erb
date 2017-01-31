@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <%= image_tag @location.image.url(:medium) %>
+</p>
+
+<p>
   <strong>Title:</strong>
   <%= @location.title %>
 </p>
@@ -24,11 +28,13 @@
   <strong>Tel:</strong>
   <%= @location.tel %>
 </p>
+      <% if @location.verified != false %>
+          <p>
+            <strong>verified:</strong>
+            <%= @location.verified %>
+          </p>
+      <% end %>
 
-<p>
-  <strong>Verified:</strong>
-  <%= @location.verified %>
-</p>
 
 <%= link_to 'Edit', edit_location_path(@location) %> |
 <%= link_to 'Back', locations_path %>
