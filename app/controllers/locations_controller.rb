@@ -16,6 +16,7 @@ class LocationsController < ApplicationController
   # GET /locations/new
   def new
     @location = current_user.locations.build
+    @categories = Category.all.map{|c| [ c.name, c.id ] }
   end
 
   # GET /locations/1/edit
@@ -26,6 +27,7 @@ class LocationsController < ApplicationController
   # POST /locations.json
   def create
     @location = current_user.locations.build(location_params)
+    @location.category_id = params[:category_id] 
 
     respond_to do |format|
       if @location.save
