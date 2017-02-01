@@ -22,6 +22,7 @@ gem 'paperclip'
 gem 'font-awesome-sass'
 gem 'bootstrap-sass'
 gem 'sprockets-rails'
+gem 'forest_liana'
 
 group :development, :test do
   gem 'byebug', platform: :mri
