@@ -1,5 +1,7 @@
 class PagesController < ApplicationController
-	def index
-		
-	end
+  def index
+    @locations = Location.all
+    @categories = Category.all
+  end
+
 end

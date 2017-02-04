@@ -1,6 +1,7 @@
-<%= form_for(location) do |f| %>
+<%= form_for(location,:html => {:class => "form inputs-underline MultiFile-intercepted"}) do |f| %>
   <% if location.errors.any? %>
     <div id="error_explanation">
+   
       <h2><%= pluralize(location.errors.count, "error") %> prohibited this location from being saved:</h2>
       
       <ul>
@@ -11,30 +12,55 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
+  <section>
 
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
+<div class="row">
+  <div class="col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2">
+ <section>
+  <h3>توضیحات</h3>
+    <div class="row">
+      <div class="col-md-9 col-sm-9">
+        <div class="form-group">
+           <%= f.label :title, "نام مجموعه" %>
+           <%= f.text_field :title, class: "form-control" %>
+        </div>
+      </div>
 
-  <div class="field">
-    <%= f.label :details %>
-    <%= f.text_area :details %>
-  </div>
+<div class="col-md-3 col-sm-3">
+    <div class="form-group">
+  <%= f.label :category_id, "دسته بندی مجموعه" %><br>
+  <%= f.collection_select(:category_id, Category.all, :id, :name) %>
+</div>
+</div>
 
-  <div class="field">
-    <%= f.label :address %>
-    <%= f.text_field :address %>
+  <div class="form-group">
+    <%= f.label :description, "توضیحات مجموعه" %>
+    <%= f.text_area :description, class: "form-control"  %>
   </div>
-
+  <div class="form-group">
+    <%= f.label :details, "نکات مجموعه" %>
+    <%= f.text_area :details, class: "form-control"   %>
+  </div>
+ 
+ </section>
+<section>
+   <h3>اطلاعات تماس</h3>
+      <div class="row">
+      <div class="col-md-9 col-sm-9">
+  <div class="form-group">
+    <%= f.label :address, "آدرس مجموعه" %>
+    <%= f.text_field :address, class: "form-control"   %>
+  </div>
+  </div>
+<div class="col-md-3 col-sm-3">
   <div class="field">
-    <%= f.label :tel %>
+    <%= f.label :tel, "تلفن تماس مجموعه" %>
     <%= f.number_field :tel %>
   </div>
+  </div>
+</div>
+   </div>
+      </section>
         <% if can? :manage, @location %>
                   <div class="field">
                     <%= f.label :verified %>
@@ -42,16 +68,22 @@
                   </div>
         <% end %>
 
-  <div class="field">
-    <%= f.file_field :image %>
-  </div>
+<section>
+  <h3 style="text-align: center;">عکس مجموعه</h3>
+      <div class="file-upload upload-pic">
+        <%= f.file_field :image, class: "center"  %>
+      </div>
+</section>
+          <hr>
 
-  <div class="field">
-  <%= f.label :category_id %><br>
-  <%= f.collection_select(:category_id, Category.all, :id, :name) %>
-</div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <div class="actions center">
+    <div class="form-group">
+<%= f.submit 'ارسال', :class => 'btn btn-primary btn-rounded' %>  </div>
+    </div>
 <% end %>
+
+
+    </div>
+  </div>
+</section>
+

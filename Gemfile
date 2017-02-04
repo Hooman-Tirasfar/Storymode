@@ -25,9 +25,10 @@ gem 'sprockets-rails'
 gem 'forest_liana'
 
 group :development, :test do
-  gem 'byebug', platform: :mri
-  gem 'dotenv-rails'
-
+  	gem 'byebug', platform: :mri
+  	gem 'dotenv-rails'
+	gem "better_errors"
+	gem "binding_of_caller"
 end
 
 group :development do

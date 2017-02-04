@@ -28,7 +28,7 @@ class LocationsController < ApplicationController
   # POST /locations.json
   def create
     @location = current_user.locations.build(location_params)
-    @location.category_id = params[:category_id] 
+    
 
     respond_to do |format|
       if @location.save
@@ -74,6 +74,6 @@ class LocationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def location_params
-      params.require(:location).permit(:title, :description, :details, :address, :tel, :verified, :image)
+      params.require(:location).permit(:title, :description, :details, :address, :tel, :verified, :image, :category_id)
     end
 end
