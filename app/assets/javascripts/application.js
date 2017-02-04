@@ -15,7 +15,6 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
-
 <script> 
     google.maps.event.addDomListener(window, 'load', init);
     var map, markersArray = [];
@@ -127,7 +126,7 @@
     function init() {
         var mapOptions = {
             center: new google.maps.LatLng(35.74378005118981,51.3765066924988),
-            zoom: 15,
+            zoom: 14,
             gestureHandling: 'auto',
             fullscreenControl: false,
             zoomControl: true,
@@ -146,7 +145,7 @@
         var mapElement = document.getElementById('mapkit-1682');
         var map = new google.maps.Map(mapElement, mapOptions);
         var locations = [
-            {"title":"Milad Tower","address":"","desc":"برج میلاد :)","tel":"","int_tel":"","email":"","web":"","web_formatted":"","open":"","time":"","lat":35.7448416,"lng":51.37532119999992,"photo":"https://lh5.googleusercontent.com/-3c9OOIISk6o/Vu75t17-dXI/AAAAAAAAB8U/Mo1clCZJhJAtwNlbtooz23ZdTgqm7JKDwCJkC/w1280-h853-k/","vicinity":"Tehran","open_hours":[{"day":"Monday","hours":"9am–11pm","$$hashKey":"object:2473"},{"day":"Tuesday","hours":"9am–11pm","$$hashKey":"object:2474"},{"day":"Wednesday","hours":"9am–11pm","$$hashKey":"object:2475"},{"day":"Thursday","hours":"9am–11pm","$$hashKey":"object:2476"},{"day":"Friday","hours":"9am–11pm","$$hashKey":"object:2477"},{"day":"Saturday","hours":"9am–11pm","$$hashKey":"object:2478"},{"day":"Sunday","hours":"9am–11pm","$$hashKey":"object:2479"}],"marker":{"fillColor":"#8E24AA","fillOpacity":1,"strokeWeight":0,"scale":1.5,"path":"M10.2,2.5v4.2c0,0,0,0,0,0L10.2,2.5c-6,0-10.9,4.9-10.9,10.9s10.9,23.8,10.9,23.8v0c0,0,10.9-17.8,10.9-23.8 S16.2,2.5,10.2,2.5z M10.2,17.9c-2.5,0-4.6-2.1-4.6-4.6s2.1-4.6,4.6-4.6s4.6,2.1,4.6,4.6S12.8,17.9,10.2,17.9z M16.8,14.1 c0-0.2,0-0.3,0-0.5C16.9,13.8,16.9,14,16.8,14.1z","anchor":{"x":10,"y":30},"origin":{"x":0,"y":0},"style":0},"iw":{"address":false,"desc":false,"email":false,"enable":true,"int_tel":false,"open":true,"open_hours":true,"photo":true,"tel":false,"title":true,"web":false}}
+            {"title":"Milad Tower","address":"","desc":"برج میلاد :)","tel":"","int_tel":"","email":"","web":"","web_formatted":"","open":"","time":"","lat":35.7448416,"lng":51.37532119999992,"photo":"https://lh5.googleusercontent.com/-3c9OOIISk6o/Vu75t17-dXI/AAAAAAAAB8U/Mo1clCZJhJAtwNlbtooz23ZdTgqm7JKDwCJkC/w1280-h853-k/","vicinity":"Tehran","open_hours":[{"day":"Monday","hours":"9am–11pm"},{"day":"Tuesday","hours":"9am–11pm"},{"day":"Wednesday","hours":"9am–11pm"},{"day":"Thursday","hours":"9am–11pm"},{"day":"Friday","hours":"9am–11pm"},{"day":"Saturday","hours":"9am–11pm"},{"day":"Sunday","hours":"9am–11pm"}],"marker":{"fillColor":"#8E24AA","fillOpacity":1,"strokeWeight":0,"scale":1.5,"path":"M10.2,2.5v4.2c0,0,0,0,0,0L10.2,2.5c-6,0-10.9,4.9-10.9,10.9s10.9,23.8,10.9,23.8v0c0,0,10.9-17.8,10.9-23.8 S16.2,2.5,10.2,2.5z M10.2,17.9c-2.5,0-4.6-2.1-4.6-4.6s2.1-4.6,4.6-4.6s4.6,2.1,4.6,4.6S12.8,17.9,10.2,17.9z M16.8,14.1 c0-0.2,0-0.3,0-0.5C16.9,13.8,16.9,14,16.8,14.1z","anchor":{"x":10,"y":30},"origin":{"x":0,"y":0},"style":0},"iw":{"address":false,"desc":false,"email":false,"enable":true,"int_tel":false,"open":true,"open_hours":true,"photo":true,"tel":false,"title":true,"web":false}}
         ];
         for (i = 0; i < locations.length; i++) {
             marker = new google.maps.Marker({
