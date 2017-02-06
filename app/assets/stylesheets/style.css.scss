@@ -2244,7 +2244,9 @@ address figure {
 address i {
   width: 30px;
   color: #4611a7;
-  margin-left: -30px;
+  margin-left: 0;
+  padding: 0 0 35px;
+  margin-right: -5px;
 }
 
 a {
@@ -2393,7 +2395,8 @@ html, body {
 p {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=65);
   opacity: 0.65;
-  line-height: 18px;
+  line-height: 26px;
+  text-align: justify;
 }
 
 ul {
@@ -3796,6 +3799,7 @@ section:not(.block) h2 {
 }
 .detail-sidebar address figure {
   margin-left: 30px;
+  display: inline-flex;
 }
 
 .duplicated-element {
@@ -7077,7 +7081,7 @@ input[type="date"]::-webkit-input-placeholder {
   width: 49%;
 }
 .form .btn[type=submit] {
-  padding: 13px;
+  padding: 10px 45px 10px 45px;
   margin-top: -2px;
 }
 
@@ -7736,7 +7740,7 @@ input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px white inset!important;
 }
 .form.inputs-underline input[type="text"], .form.inputs-underline input[type="email"], .form.inputs-underline input[type="date"], .form.inputs-underline input[type="time"], .form.inputs-underline input[type="search"], .form.inputs-underline input[type="password"], .form.inputs-underline input[type="number"], .form.inputs-underline input[type="tel"], .form.inputs-underline textarea.form-control, .input-group.inputs-underline input[type="text"], .input-group.inputs-underline input[type="email"], .input-group.inputs-underline input[type="date"], .input-group.inputs-underline input[type="time"], .input-group.inputs-underline input[type="search"], .input-group.inputs-underline input[type="password"], .input-group.inputs-underline input[type="number"], .input-group.inputs-underline input[type="tel"], .input-group.inputs-underline textarea.form-control {
-    text-align: left;
+    text-align: right;
 }
 input#user_email ,input#user_password {
     direction: ltr!important;
@@ -7768,7 +7772,11 @@ width:100%;
     position: relative;
     right: 46%;
 }
-    #mainMap {
-        height:600px;
-        width:100%;
-    }
+#mainMap {
+    height:600px;
+    width:100%;
+}
+p.image {
+    margin-right: auto;
+    margin-left: auto;
+}

@@ -1,47 +1,53 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <%= image_tag @location.image.url(:medium) %>
-</p>
+<div class="container">         
+  <section class="page-title pull-left">
+      <h1><%= @location.title %></h1>
+      <h5> <%= @location.category.name %></h5>
+  </section>
+            <!--title-->
+</div>
+<div class="container"> 
+  <div class="row">
+    <div class="col-md-7 col-sm-7">
+      <section>
+          <h2>درباره این استوری</h2>
+          <p><%= @location.description %></p>
+      </section>
+      <section>
+          <h2>امکانات این استوری</h2>
+            <p><%= @location.details %></p>
+      </section>
+    </div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @location.title %>
-</p>
+<div class="col-md-5 col-sm-5">
+                    <div class="detail-sidebar">
+                        <section class="shadow">
+                           <p class="image">
+                            <%= image_tag @location.image.url(:medium) %>
+                          </p>
+                                <hr>
+                                <address>
+                                    <figure><i class="fa fa-map-marker"></i><%= @location.address %></figure>
+                                    <figure><i class="fa fa-phone"></i> <%= @location.tel %></figure>
+                                </address>
+                            </div>
+                        </section>
+                        
+                        
+                    </div>
+                    <!--end detail-sidebar-->
+                </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @location.description %>
-</p>
+</div>
+</div>
 
-<p>
-  <strong>Details:</strong>
-  <%= @location.details %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @location.address %>
-</p>
-<p>
-  <strong>Tel:</strong>
-  <%= @location.tel %>
-</p>
       <% if @location.verified != false %>
           <p>
-            <strong>verified:</strong>
             <%= @location.verified %>
           </p>
 
       <% end %>
 
-        <b>Category:</b>
-    
-      <tr>
-        <td><%= @location.category.name %></td>
-              </tr>
 
+                        <p class="center"><%= link_to 'ویرایش', edit_location_path(@location) %></p>
 
-
-<%= link_to 'Edit', edit_location_path(@location) %> |
-<%= link_to 'Back', locations_path %>
