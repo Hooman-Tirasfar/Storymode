@@ -19,6 +19,7 @@
                                 </div>
                                 <!--end title-->
                                 <ul>
+                                <li><%= link_to "هنری", categories_path %><figure class="count"><%= Category.find_by(name: 'هنری').locations.count %></figure></li>
                                     <li><a href="">History</a><figure class="count">2</figure></li>
                                     <li><a href="">Literature</a><figure class="count">4</figure></li>
                                 </ul>
