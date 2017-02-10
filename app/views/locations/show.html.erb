@@ -41,12 +41,9 @@
 </div>
 </div>
 
-      <% if @location.verified != false %>
-          <p>
-            <%= @location.verified %>
-          </p>
-
-      <% end %>
+<% if @location.verified == true %>
+  <figure class="circle" title="تایید شده"><i class="fa fa-check"></i></figure>
+<% end %>
 
 
                         <p class="center"><%= link_to 'ویرایش', edit_location_path(@location) %></p>

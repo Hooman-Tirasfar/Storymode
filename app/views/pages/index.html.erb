@@ -73,7 +73,7 @@
           <div class="label label-default">استوری مود : <%= location.category.name if location.category %></div>
           <h3><%= location.title %></h3>
                 <% if location.verified == true %>
-                  <figure class="circle" title="Featured"><i class="fa fa-check"></i></figure>
+                  <figure class="circle" title="تایید شده"><i class="fa fa-check"></i></figure>
                 <% end %>
 
           <h6><%= truncate location.description, length: 80 %></h6>
