@@ -1,157 +1,98 @@
 <div class="hero-section height-600px has-map">
     <div id='mainMap'></div>
 </div>
-<div class="block">
-            <div class="container">
-                <div class="section-title">
-                    <div class="center">
-                        <h2>Browse Our Listings</h2>
+
+<div class="row-intro">
+    <div class="container">            
+            <section class="center page-title">
+                <h1>چطور کار میکنه ؟</h1>
+                <h3 class="subtitle">خیلی راحت فقط مراحل زیر انجام بده</h3>
+            </section>
+            <!--end page-title-->
+            <section>
+                <div class="row">
+                    <div class="col-md-10 cols-m-10 col-md-offset-3">
+                        <div class="step">
+                            <div class="circle circle-right">
+                                <figure>۱</figure>
+                                <i class="fa fa-eercast" aria-hidden="true"></i>
+                                <div class="circle-bg opacity-60"></div>
+                            </div>
+                            <div class="box">
+                                <h2>ثبت نام</h2>
+                                <p>استفاده از استوری مود کاملا رایگانه، حتی ثبت نام و ارسال استوری هم رایگان حتی برای مقاصد تجاری.
+                                </p>
+                              <%= link_to new_user_registration_path, :class => "btn btn-primary btn-small btn-rounded icon shadow add-listing" do %>
+                                  <span>ثبت نام</span>
+                              <% end %>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="circle">
+                                <figure>۲</figure>
+                                <i class="fa fa-grav" aria-hidden="true"></i>
+                                <div class="circle-bg opacity-90"></div>
+                            </div>
+                            <div class="box">
+                                <h2>ارسال استوری</h2>
+                                <p>هر استوری یه موقعیت روی نقشه تهران پس از ثبت نام میتونی استوری مورد علاقه ات به بقیه هم نشون بدی.
+                                </p>
+                              <%= link_to new_location_path, :class => "btn btn-primary btn-small btn-rounded icon shadow add-listing" do %>
+                                  <span>ارسال استوری جدید</span>
+                              <% end %>
+                            </div>
+                        </div>
+                        <!--end step-->
                     </div>
+                    <!--end col-md-8-->
                 </div>
-                <!--end section-title-->
-                <div class="categories-list">
-                    <div class="row">
-                        <div class="col-md-3 col-sm-3">
-                            <div class="list-item">
-                                <div class="title">
-                                    <div class="icon"><i class="fa fa-paint-brush"></i></div>
-                                    <h3><a href="#">Arts &amp; Humanities</a></h3>
-                                </div>
-                                <!--end title-->
-                                <ul>
-                                <li><%= link_to "هنری", categories_path %><figure class="count"><%= Category.find_by(name: 'هنری').locations.count %></figure></li>
-                                    <li><a href="">History</a><figure class="count">2</figure></li>
-                                    <li><a href="">Literature</a><figure class="count">4</figure></li>
-                                </ul>
-                            </div>
-                            <!--end list-item-->
-                        </div>
-                        <!--end col-md-3-->
-                        <div class="col-md-3 col-sm-3">
-                            <div class="list-item">
-                                <div class="title">
-                                    <div class="icon"><i class="fa fa-suitcase"></i></div>
-                                    <h3><a href="#">Business &amp; Economy</a></h3>
-                                </div>
-                                <!--end title-->
-                                <ul>
-                                    <li><a href="">Business to Business</a><figure class="count">6</figure></li>
-                                    <li><a href="">Finance</a><figure class="count">4</figure></li>
-                                    <li><a href="">Shopping</a><figure class="count">3</figure></li>
-                                    <li><a href="">Jobs</a><figure class="count">5</figure></li>
-                                </ul>
-                            </div>
-                            <!--end list-item-->
-                        </div>
-                        <!--end col-md-3-->
-                        <div class="col-md-3 col-sm-3">
-                            <div class="list-item">
-                                <div class="title">
-                                    <div class="icon"><i class="fa fa-desktop"></i></div>
-                                    <h3><a href="#">Computer &amp; Internet</a></h3>
-                                </div>
-                                <!--end title-->
-                                <ul>
-                                    <li><a href="">Hardware</a><figure class="count">10</figure></li>
-                                    <li><a href="">Software</a><figure class="count">4</figure></li>
-                                    <li><a href="">Websites</a><figure class="count">6</figure></li>
-                                    <li><a href="">Games</a><figure class="count">7</figure></li>
-                                </ul>
-                            </div>
-                            <!--end list-item-->
-                        </div>
-                        <!--end col-md-3-->
-                        <div class="col-md-3 col-sm-3">
-                            <div class="list-item">
-                                <div class="title">
-                                    <div class="icon"><i class="fa fa-graduation-cap"></i></div>
-                                    <h3><a href="#">Education</a></h3>
-                                </div>
-                                <!--end title-->
-                                <ul>
-                                    <li><a href="">Colleges</a><figure class="count">8</figure></li>
-                                    <li><a href="">K-12</a><figure class="count">7</figure></li>
-                                    <li><a href="">Distance Learning </a><figure class="count">2</figure></li>
-                                </ul>
-                            </div>
-                            <!--end list-item-->
-                        </div>
-                        <!--end col-md-3-->
-                    </div>
-                    <!--end row-->
-                    <div class="row">
-                        <div class="col-md-3 col-sm-3">
-                            <div class="list-item">
-                                <div class="title">
-                                    <div class="icon"><i class="fa fa-television"></i></div>
-                                    <h3><a href="#">Entertainment</a></h3>
-                                </div>
-                                <!--end title-->
-                                <ul>
-                                    <li><a href="">Movies</a><figure class="count">6</figure></li>
-                                    <li><a href="">TV Shows</a><figure class="count">9</figure></li>
-                                    <li><a href="">Music</a><figure class="count">1</figure></li>
-                                    <li><a href="">Humor </a><figure class="count">4</figure></li>
-                                </ul>
-                            </div>
-                            <!--end list-item-->
-                        </div>
-                        <!--end col-md-3-->
-                        <div class="col-md-3 col-sm-3">
-                            <div class="list-item">
-                                <div class="title">
-                                    <div class="icon"><i class="fa fa-university"></i></div>
-                                    <h3><a href="#">Government</a></h3>
-                                </div>
-                                <!--end title-->
-                                <ul>
-                                    <li><a href="">Elections</a><figure class="count">3</figure></li>
-                                    <li><a href="">Military</a><figure class="count">2</figure></li>
-                                    <li><a href="">Law</a><figure class="count">6</figure></li>
-                                    <li><a href="">Taxes</a><figure class="count">7</figure></li>
-                                </ul>
-                            </div>
-                            <!--end list-item-->
-                        </div>
-                        <!--end col-md-3-->
-                        <div class="col-md-3 col-sm-3">
-                            <div class="list-item">
-                                <div class="title">
-                                    <div class="icon"><i class="fa fa-heart"></i></div>
-                                    <h3><a href="#">Health</a></h3>
-                                </div>
-                                <!--end title-->
-                                <ul>
-                                    <li><a href="">Disease</a><figure class="count">1</figure></li>
-                                    <li><a href="">Drugs</a><figure class="count">5</figure></li>
-                                    <li><a href="">Fitness</a><figure class="count">4</figure></li>
-                                    <li><a href="">Nutrition </a><figure class="count">8</figure></li>
-                                </ul>
-                            </div>
-                            <!--end list-item-->
-                        </div>
-                        <!--end col-md-3-->
-                        <div class="col-md-3 col-sm-3">
-                            <div class="list-item">
-                                <div class="title">
-                                    <div class="icon"><i class="fa fa-newspaper-o"></i></div>
-                                    <h3><a href="#">News &amp; Media</a></h3>
-                                </div>
-                                <!--end title-->
-                                <ul>
-                                    <li><a href="">Newspapers</a><figure class="count">5</figure></li>
-                                    <li><a href="">Radio</a><figure class="count">9</figure></li>
-                                    <li><a href="">Weather</a><figure class="count">3</figure></li>
-                                    <li><a href="">Blogs</a><figure class="count">4</figure></li>
-                                </ul>
-                            </div>
-                            <!--end list-item-->
-                        </div>
-                        <!--end col-md-3-->
-                    </div>
-                    <!--end row-->
-                </div>
-                <!--end categories-list-->
+                <!--end row-->
+            </section>
+            <hr>
             </div>
-            <!--end container-->
         </div>
+
+<div id="page-content" style="transform: translateY(0px);">
+  <div class="container">
+<section class="center page-title">
+                <h1>آخرین‌ استوری ها</h1>
+            </section>
+  <section>
+    <div class="row">
+
+        <% @locations.last(20).each do |location| %>
+              <div class="col-md-5 col-sm-5">
+                <% if can? :manage, location %>
+                <%= link_to 'حذف', location, method: :delete, data: { confirm: 'Are you sure?' } %>
+                <% end %>
+        <div class="item">
+
+          <%= link_to(location) do %>
+
+         <div class="description">
+          <div class="label label-default">استوری مود : <%= location.category.name if location.category %></div>
+          <h3><%= location.title %></h3>
+                <% if location.verified == true %>
+                  <figure class="circle" title="Featured"><i class="fa fa-check"></i></figure>
+                <% end %>
+
+          <h6><%= truncate location.description, length: 80 %></h6>
+        </div>
+        <!--end description-->
+      <%= image_tag location.image.url(:medium) if location.image %>
+
+        <!--end image-->
+              </div>
+          </div>
+        <% end %>
+
+        <% end %>
+
+      </div>
+ <!--end item-->
+ <!--end row-->
+  </section>
+
+    </div>
+</div>
+

@@ -1,4 +1,5 @@
-<div class="container">
+<div id="page-content" style="transform: translateY(0px); min-height: 100%;">
+  <div class="container">
             
 
             <section class="page-title">
@@ -10,9 +11,12 @@
 
         <% @locations.each do |location| %>
               <div class="col-md-5 col-sm-5">
+
+
                 <% if can? :update, location %>
-                <%= link_to 'ویرایش', edit_location_path(location) %>
-                <% end %>
+                    <%= link_to edit_location_path(location), :class => "link icon" do %>
+                        <i class="fa fa-edit"></i><span> ویرایش </span>
+                    <% end %>                <% end %>
                 <% if can? :manage, location %>
                 <%= link_to 'حذف', location, method: :delete, data: { confirm: 'Are you sure?' } %>
                 <% end %>
@@ -44,6 +48,6 @@
  <!--end row-->
   </section>
 
-
+    </div>
 </div>
 

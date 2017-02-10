@@ -5758,28 +5758,6 @@ section:not(.block) h2 {
 .step .box {
   margin-left: 220px;
 }
-.step .box:after {
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 11.5px 11px 11.5px 0;
-  border-color: transparent #fafafa transparent transparent;
-  content: "";
-  position: absolute;
-  top: 30px;
-  left: -11px;
-}
-.step .box:before {
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 11.5px 11px 11.5px 0;
-  border-color: transparent rgba(0, 0, 0, 0.1) transparent transparent;
-  content: "";
-  position: absolute;
-  top: 32px;
-  left: -11px;
-}
 .step h2 {
   margin-bottom: 20px;
 }
@@ -7788,4 +7766,13 @@ width:100%;
 p.image {
     margin-right: auto;
     margin-left: auto;
+}
+.row-intro {
+    margin-right: -15px;
+    margin-left: -15px;
+    margin-top: 34px;
+    margin-bottom: 34px;
+}
+.circle-right {
+  right: -25%;
 }

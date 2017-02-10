@@ -27,16 +27,27 @@
                 </div>
                 <!--end primary-nav-->
                   <div class="secondary-nav">
+
+                    <%= link_to locations_path do %>
+                        <span>استوری ها</span>
+                    <% end %>
+
                     <% if user_signed_in? %>
-                      <%= link_to('خروج', destroy_user_session_path, :method => :delete) %>        
+                    <%= link_to('خروج', destroy_user_session_path, :method => :delete) %>
+
                     <% else %>
                       <%= link_to "ثبت نام", new_user_registration_path %>
                       <%= link_to "ورود", new_user_session_path %>
                     <% end %>
 
-                </div>
+
+
+                  </div>
                 <!--end secondary-nav-->
-                <a href="http://localhost:3000/locations/new" class="btn btn-primary btn-small btn-rounded icon shadow add-listing"<i class="fa fa-plus"></i><span>ارسال موقعیت جدید</span></a>
+                    <%= link_to new_location_path, :class => "btn btn-primary btn-small btn-rounded icon shadow add-listing" do %>
+                    <i class="fa fa-plus"></i><span>ارسال استوری جدید</span>
+                    <% end %>
+
                 <div class="nav-btn">
                     <i></i>
                     <i></i>
@@ -223,6 +234,36 @@
 </script>
   
 
-
+<footer id="page-footer">
+        <div class="footer-wrapper">
+            <div class="block">
+                <div class="container">
+                    <div class="vertical-aligned-elements">
+                        <div class="element width-50">
+                            <p data-toggle="modal" data-target="#myModal">برای تایید استوری اتون لینک اش به تلگراممون ارسال کنید. </p>
+                        </div>
+                        <div class="element width-50 text-align-left">
+                            <a href="http://tlgrm.me/hooman_t/"><i class="fa fa-telegram fa-2x" ></i></a>
+                        </div>
+                    </div>
+                    <div class="background-wrapper">
+                        <div class="bg-transfer opacity-50" style="background-image: url(&quot;assets/img/footer-bg.png&quot;);">
+                            <img src="assets/img/footer-bg.png" alt="">
+                        </div>
+                    </div>
+                    <!--end background-wrapper-->
+                </div>
+            </div>
+            <div class="footer-navigation">
+                <div class="container">
+                    <div class="vertical-aligned-elements">
+                        <div class="element width-50">۲۰۱۶ - تمامی حقوق برای استوری مود محفوظ است</div>
+                        <div class="element width-50 text-align-left">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
   </body>
 </html>
