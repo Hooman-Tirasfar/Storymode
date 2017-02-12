@@ -22,13 +22,19 @@ gem 'paperclip'
 gem 'font-awesome-sass'
 gem 'bootstrap-sass'
 gem 'sprockets-rails'
-gem 'forest_liana'
 
 group :development, :test do
   	gem 'byebug', platform: :mri
   	gem 'dotenv-rails'
-	gem "better_errors"
-	gem "binding_of_caller"
+	  gem "better_errors"
+	  gem "binding_of_caller"
+    gem 'capistrano', '~> 3.7', '>= 3.7.1'
+gem 'capistrano-rails', '~> 1.2'
+gem 'capistrano-passenger', '~> 0.2.0'
+
+# Add this if you're using rbenv
+ gem 'capistrano-rbenv', '~> 2.1'
+
 end
 
 group :development do
